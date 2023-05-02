@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+<h1>Perfil de {{ perfi_character.name }}</h1>
+<div class="row" style="margin-top: 30px">
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <img src="{{ perfi_character.image }}" alt="Personaje">
+                <p>{{ perfi_character.status }} - {{ perfi_character.species }}</p> 
+                <p>Last know location</p>
+                <h4>{{ perfi_character.location }}</h4>
+                <p>First seen in</p>
+                <h4>{{ perfi_character.origin }}</h4>
+                <a href="{{ url_for('character_router.listar')}}">Regresar</a>
+            </div>
+
+        </div>
+
+    </div>
+    
+</div>
+{% endblock %}

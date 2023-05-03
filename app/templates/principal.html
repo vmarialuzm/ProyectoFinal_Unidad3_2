@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+<div class="container">
+  <h1 class="text-center">Rick and Morty</h1>
+  <div class="jumbotron text-center">
+    <img src="https://indiehoy.com/wp-content/uploads/2020/06/rick-and-morty-1.jpg" alt="Personaje" width="300" class="mx-auto d-block">
+    <p>
+      Rick y Morty (en inglés: Rick and Morty) es una serie de televisión americana de animación para adultos creada por Justin Roiland y Dan Harmon en 2013 para Adult Swim, también se emitió en Cartoon Network. La serie sigue las desventuras de un científico, Rick Sanchez, y su fácilmente influenciable nieto, Morty, quienes pasan el tiempo entre la vida doméstica y los viajes espaciales, temporales e intergalácticos.
+    </p>
+    <a href="{{ url_for('character_router.cargar_json_bd')}}" class="btn btn-warning">Añadir</a>
+    <a href="{{ url_for('character_router.listar')}}" class="btn btn-info">Listar</a>
+    <a href="{{ url_for('character_router.eliminar_coleccion')}}" class="btn btn-danger">Eliminar</a>
+  </div>
+</div>
+
+{% endblock %}
+
+
+
+
+

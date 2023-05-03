@@ -6,6 +6,11 @@ import requests
 character_router = Blueprint("character_router",__name__)
 
 @character_router.route("/")
+def principal():
+    return render_template("principal.html")
+
+#------------------------------------------------------------
+@character_router.route("/listar")
 def listar():
     characters = db.coleccion_character.find()
 
@@ -44,7 +49,13 @@ def cargar_json_bd():
 
     flash("Carga exitosa","success")
 
-    return redirect(url_for('character_router.listar'))
+    return render_template("principal.html")
         
-
+#------------------------------------------------------------
+@character_router.route("/delete")
+def eliminar_coleccion():
+    db.coleccion_character.drop()
+    
+    flash("Eliminado correctamente","success")
+    return render_template("principal.html")
 

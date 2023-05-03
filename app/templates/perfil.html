@@ -3,11 +3,12 @@
 {% block content %} 
 
 <h1>Perfil de {{ perfi_character.name }}</h1>
+<a href="{{url_for('character_router.principal')}}" class="btn btn-success">Volver al inicio</a>
 <div class="row" style="margin-top: 30px">
     <div class="col-md-3">
         <div class="panel panel-default">
             <div class="panel-body">
-                <img src="{{ perfi_character.image }}" alt="Personaje">
+                <img src="{{ perfi_character.image }}" alt="Personaje" width="200" class="mx-auto d-block">
                 <p>{{ perfi_character.status }} - {{ perfi_character.species }}</p> 
                 <p>Last know location</p>
                 <h4>{{ perfi_character.location }}</h4>
